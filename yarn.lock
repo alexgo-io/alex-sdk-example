@@ -534,10 +534,10 @@
     magic-string "^0.27.0"
     react-refresh "^0.14.0"
 
-alex-sdk@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/alex-sdk/-/alex-sdk-0.0.3.tgz#f4df288caaa0032976db4ebaea22ec8b48cced36"
-  integrity sha512-MLw4EVDDKj/mKcFrWX/gsoPGzYkXjhc27+A1Gm806QrE+idU45RfRl57EB9wKOPLwt3KgcoCLVqOTBoyYcDK6A==
+alex-sdk@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/alex-sdk/-/alex-sdk-0.0.4.tgz#4bc412ae1e34cf5d074946d5d24a12e3d21f8fa4"
+  integrity sha512-a5HTTPHp8s2dmSFZLocsJvAHIStkauAJr8RHgD89JDF0FeK8FcKne8X8RMtc8tQUA1Vmu6xCDZqtLr9/DIEXyQ==
   dependencies:
     "@stacks/transactions" "^6.2.0"
     clarity-codegen "^0.2.0"

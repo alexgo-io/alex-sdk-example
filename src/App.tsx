@@ -93,7 +93,7 @@ function App() {
           <button
             disabled={!valid}
             onClick={async () => {
-              const result = await alex.getFee(from!, to!);
+              const result = await alex.getFeeRate(from!, to!);
               const feeRate = Number(result) / 1e8;
               alert(
                 `Fee rate is ${feeRate * 100}%, fee is ${
