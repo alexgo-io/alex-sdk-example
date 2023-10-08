@@ -61,6 +61,15 @@ function App() {
           marginBottom: 10,
         }}
       >
+        <button
+          onClick={async () => {
+            const result = await alex.getLatestPrices();
+            console.log(result)
+            alert(JSON.stringify(result, null, 2));
+          }}
+        >
+          Get Currency Prices
+        </button>
         <p>From:</p>
         <input
           value={amount}
