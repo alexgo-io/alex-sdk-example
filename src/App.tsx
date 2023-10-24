@@ -63,6 +63,15 @@ function App() {
       >
         <button
           onClick={async () => {
+            const result = await alex.fetchTokenList();
+            console.log(result)
+            alert(JSON.stringify(result, null, 2));
+          }}
+        >
+          Get Token Infos
+        </button>
+        <button
+          onClick={async () => {
             const result = await alex.getLatestPrices();
             console.log(result)
             alert(JSON.stringify(result, null, 2));
