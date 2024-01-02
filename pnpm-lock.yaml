@@ -9,8 +9,8 @@ dependencies:
     specifier: ^7.2.1
     version: 7.2.1
   alex-sdk:
-    specifier: ^0.1.22
-    version: 0.1.22(@stacks/network@6.8.1)(@stacks/transactions@6.9.0)
+    specifier: ^0.1.23
+    version: 0.1.23(@stacks/network@6.8.1)(@stacks/transactions@6.9.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -660,8 +660,8 @@ packages:
       - supports-color
     dev: true
 
-  /alex-sdk@0.1.22(@stacks/network@6.8.1)(@stacks/transactions@6.9.0):
-    resolution: {integrity: sha512-g8sQN5Cs8mbkbOb0sHFN//lYVlJq6jG452LGOtNSOeoP7I5WNWgkwn0OrW8jqxjanbQCgoouP4xutXky1JDIGQ==}
+  /alex-sdk@0.1.23(@stacks/network@6.8.1)(@stacks/transactions@6.9.0):
+    resolution: {integrity: sha512-HVgEpB6lJJXW/F0YsYPqQsnOYYtitYaEhjt4xoJsBbqDBxXweIDAQUlGJJBv6VpEK0Veg9NPd+QbhkywIdPbJg==}
     engines: {node: '>=10'}
     peerDependencies:
       '@stacks/network': '*'
