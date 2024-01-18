@@ -8,9 +8,12 @@ dependencies:
   '@stacks/connect':
     specifier: ^7.2.1
     version: 7.2.1
+  '@stacks/network':
+    specifier: ^6.10.0
+    version: 6.10.0
   alex-sdk:
-    specifier: ^0.1.23
-    version: 0.1.23(@stacks/network@6.8.1)(@stacks/transactions@6.9.0)
+    specifier: ^0.1.24
+    version: 0.1.24(@stacks/network@6.10.0)(@stacks/transactions@6.9.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -518,12 +521,19 @@ packages:
     dependencies:
       '@stacks/common': 6.8.1
       '@stacks/encryption': 6.9.0
-      '@stacks/network': 6.8.1
+      '@stacks/network': 6.10.0
       '@stacks/profile': 6.9.0
       cross-fetch: 3.1.8
       jsontokens: 4.0.1
     transitivePeerDependencies:
       - encoding
+    dev: false
+
+  /@stacks/common@6.10.0:
+    resolution: {integrity: sha512-6x5Z7AKd9/kj3+DYE9xIDIkFLHihBH614i2wqrZIjN02WxVo063hWSjIlUxlx8P4gl6olVzlOy5LzhLJD9OP0A==}
+    dependencies:
+      '@types/bn.js': 5.1.2
+      '@types/node': 18.18.4
     dev: false
 
   /@stacks/common@6.8.1:
@@ -544,7 +554,7 @@ packages:
     dependencies:
       '@stacks/auth': 6.9.0
       '@stacks/connect-ui': 6.0.1
-      '@stacks/network': 6.8.1
+      '@stacks/network': 6.10.0
       '@stacks/profile': 6.9.0
       '@stacks/transactions': 6.9.0
       jsontokens: 4.0.1
@@ -567,10 +577,10 @@ packages:
       varuint-bitcoin: 1.1.2
     dev: false
 
-  /@stacks/network@6.8.1:
-    resolution: {integrity: sha512-n8M25pPbLqpSBctabtsLOTBlmPvm9EPQpTI//x7HLdt5lEjDXxauEQt0XGSvDUZwecrmztqt9xNxlciiGApRBw==}
+  /@stacks/network@6.10.0:
+    resolution: {integrity: sha512-mbiZ8nlsyy77ndmBdaqhHXii22IFdK4ThRcOQs9j/O00DkAr04jCM4GV5Q+VLUnZ9OBoJq7yOV7Pf6jglh+0hw==}
     dependencies:
-      '@stacks/common': 6.8.1
+      '@stacks/common': 6.10.0
       cross-fetch: 3.1.8
     transitivePeerDependencies:
       - encoding
@@ -580,7 +590,7 @@ packages:
     resolution: {integrity: sha512-sIR60DsAHi8C6zGqKqSe1r2hXTMHgwrJkX3fAaP3de40KeplZ2bkE+0B83yismEeU2baNc+AukyVvWJv0PfP0A==}
     dependencies:
       '@stacks/common': 6.8.1
-      '@stacks/network': 6.8.1
+      '@stacks/network': 6.10.0
       '@stacks/transactions': 6.9.0
       jsontokens: 4.0.1
       schema-inspector: 2.1.0
@@ -599,7 +609,7 @@ packages:
       '@noble/hashes': 1.1.5
       '@noble/secp256k1': 1.7.1
       '@stacks/common': 6.8.1
-      '@stacks/network': 6.8.1
+      '@stacks/network': 6.10.0
       c32check: 2.0.0
       lodash.clonedeep: 4.5.0
     transitivePeerDependencies:
@@ -660,16 +670,16 @@ packages:
       - supports-color
     dev: true
 
-  /alex-sdk@0.1.23(@stacks/network@6.8.1)(@stacks/transactions@6.9.0):
-    resolution: {integrity: sha512-HVgEpB6lJJXW/F0YsYPqQsnOYYtitYaEhjt4xoJsBbqDBxXweIDAQUlGJJBv6VpEK0Veg9NPd+QbhkywIdPbJg==}
+  /alex-sdk@0.1.24(@stacks/network@6.10.0)(@stacks/transactions@6.9.0):
+    resolution: {integrity: sha512-Uz8atbx3vwZHXKSwUWXgWJ8mWNbpmqXtHGReHlCmW1E/u7A92+bhJpokpqkOPRLccsFn7Wndo985+yLfO0R7kw==}
     engines: {node: '>=10'}
     peerDependencies:
       '@stacks/network': '*'
       '@stacks/transactions': '*'
     dependencies:
-      '@stacks/network': 6.8.1
+      '@stacks/network': 6.10.0
       '@stacks/transactions': 6.9.0
-      clarity-codegen: 0.2.6(@stacks/transactions@6.9.0)
+      clarity-codegen: 0.3.5(@stacks/transactions@6.9.0)
     transitivePeerDependencies:
       - debug
     dev: false
@@ -766,8 +776,8 @@ packages:
       supports-color: 5.5.0
     dev: true
 
-  /clarity-codegen@0.2.6(@stacks/transactions@6.9.0):
-    resolution: {integrity: sha512-1ZZoPO4VcqPkOaOPaj0OxgVeAJAjpga2nbbMTVynrYBEwN77hrWIwYfnICR0K3XFoyeW+mzxnYw9CpOvEA9eWQ==}
+  /clarity-codegen@0.3.5(@stacks/transactions@6.9.0):
+    resolution: {integrity: sha512-tMYXP0lyZ/WViR2vRHCdv/vD+VLhzguawa+GyGRhwMTaYzBRzgyvaZf1qipEf8tIhd8wQGI+3e9KGaWC8TRcaA==}
     hasBin: true
     peerDependencies:
       '@stacks/transactions': '*'

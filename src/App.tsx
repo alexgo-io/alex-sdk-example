@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import "./App.css";
-
+import { StacksMainnet} from "@stacks/network"
 import {
   AppConfig,
   openContractCall,
@@ -149,7 +149,7 @@ function App() {
             onClick={async () => {
               const stxAddress = userData!.profile.stxAddress.mainnet;
               const routers = await alex.getRouter(from!, to!);
-              const tx = await alex.runSwap(
+              const tx = alex.runSwap(
                 stxAddress,
                 from!,
                 to!,
@@ -157,7 +157,10 @@ function App() {
                 BigInt(0),
                 routers
               );
-              await openContractCall(tx);
+              await openContractCall({
+                ...tx,
+                network: new StacksMainnet()
+              });
             }}
           >
             Swap
