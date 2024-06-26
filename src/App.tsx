@@ -144,7 +144,7 @@ function App() {
           <button
             disabled={!valid}
             onClick={async () => {
-              const routers = await alex.getRouter(from!, to!);
+              const routers = await alex.getRoute(from!, to!);
               alert(`Routers: ${routers.join(" -> ")}`);
             }}
           >
