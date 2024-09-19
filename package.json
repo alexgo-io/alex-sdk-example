@@ -11,15 +11,20 @@
   "dependencies": {
     "@stacks/connect": "^7.2.1",
     "@stacks/network": "^6.10.0",
+    "@stacks/stacks-blockchain-api-types": "^7.14.1",
+    "@stacks/transactions": "^6.16.1",
     "alex-sdk": "^2.1.4",
+    "c32check": "^2.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "ts-clarity": "^0.0.26"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^4.3.1",
     "prettier": "^3.3.2",
+    "tsx": "^4.19.1",
     "typescript": "^5.4.5",
     "vite": "^5.3.1"
   }
