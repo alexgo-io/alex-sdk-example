@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "simulation": "tsx simulation/index.ts"
   },
   "dependencies": {
     "@stacks/connect": "^7.2.1",
