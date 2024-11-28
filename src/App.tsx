@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import "./App.css";
-import { StacksMainnet } from "@stacks/network";
+import { STACKS_MAINNET } from "@stacks/network";
 import {
   AppConfig,
   openContractCall,
@@ -46,9 +46,9 @@ function App() {
     });
   }, []);
 
-  const [from, setFrom] = useState<Currency>(Currency.STX);
   const [amount, setAmount] = useState("");
-  const [to, setTo] = useState<Currency>("token-alex" as Currency);
+  const [from, setFrom] = useState<Currency>(Currency.STX);
+  const [to, setTo] = useState<Currency>(Currency.ALEX);
 
   const valid =
     from != null &&
@@ -163,7 +163,7 @@ function App() {
               );
               await openContractCall({
                 ...tx,
-                network: new StacksMainnet(),
+                network: STACKS_MAINNET,
               });
             }}
           >

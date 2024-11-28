@@ -1,5 +1,5 @@
 import { AlexSDK, Currency } from "alex-sdk";
-import { SimulationBuilder } from "./stxer";
+import { SimulationBuilder } from "stxer";
 
 const sdk = new AlexSDK()
 const addr = "SP212Y5JKN59YP3GYG07K3S8W5SSGE4KH6B5STXER"
