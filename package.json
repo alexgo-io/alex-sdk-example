@@ -10,11 +10,12 @@
     "simulation": "tsx simulation/index.ts"
   },
   "dependencies": {
+    "@stacks/common": "^7.0.2",
     "@stacks/connect": "^7.9.0",
     "@stacks/network": "^7.0.2",
     "@stacks/stacks-blockchain-api-types": "^7.14.1",
     "@stacks/transactions": "^7.0.2",
-    "alex-sdk": "^3.0.0-beta.1",
+    "alex-sdk": "3.0.0-beta.4",
     "c32check": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

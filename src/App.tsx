@@ -1,14 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
-import "./App.css";
-import { STACKS_MAINNET } from "@stacks/network";
 import {
   AppConfig,
+  type FinishedTxData,
   openContractCall,
   showConnect,
-  UserData,
+  type SponsoredFinishedTxData,
+  type UserData,
   UserSession,
 } from "@stacks/connect";
+import { STACKS_MAINNET } from "@stacks/network";
 import { AlexSDK, Currency } from "alex-sdk";
+import { useCallback, useEffect, useState } from "react";
+import "./App.css";
 
 const appConfig = new AppConfig([]);
 const userSession = new UserSession({ appConfig });
@@ -49,12 +51,13 @@ function App() {
   const [amount, setAmount] = useState("");
   const [from, setFrom] = useState<Currency>(Currency.STX);
   const [to, setTo] = useState<Currency>(Currency.ALEX);
+  const [useSponsorTx, setUseSponsorTx] = useState(false);
 
   const valid =
     from != null &&
     to != null &&
     amount !== "" &&
-    !isNaN(Number(amount)) &&
+    !Number.isNaN(Number(amount)) &&
     from !== to;
 
   return (
@@ -114,6 +117,14 @@ function App() {
         <button onClick={onConnectWallet}>Connect Wallet</button>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+            <input
+              type="checkbox"
+              checked={useSponsorTx}
+              onChange={(e) => setUseSponsorTx(e.target.checked)}
+            />
+            <label>Use Sponsor Tx</label>
+          </div>
           <button
             disabled={!valid}
             onClick={async () => {
@@ -131,11 +142,17 @@ function App() {
           <button
             disabled={!valid}
             onClick={async () => {
-              const result = await alex.getAmountTo(
-                from!,
-                BigInt(Number(amount) * 1e8),
-                to!,
-              );
+              const result = useSponsorTx
+                ? await alex.getAmountToForSponsorTx(
+                    from!,
+                    BigInt(Number(amount) * 1e8),
+                    to!,
+                  )
+                : await alex.getAmountTo(
+                    from!,
+                    BigInt(Number(amount) * 1e8),
+                    to!,
+                  );
               alert(`You will get ${Number(result) / 1e8} ${to}`);
             }}
           >
@@ -154,7 +171,26 @@ function App() {
             disabled={!valid}
             onClick={async () => {
               const stxAddress = userData!.profile.stxAddress.mainnet;
-              const tx = await alex.runSwap(
+              if (useSponsorTx) {
+                const tx = await alex.runSwapForSponsorTx(
+                  stxAddress,
+                  from!,
+                  to!,
+                  BigInt(Number(amount) * 1e8),
+                  BigInt(0),
+                );
+                await openContractCall({
+                  ...tx,
+                  network: STACKS_MAINNET,
+                  sponsored: true,
+                  onFinish: async (data: SponsoredFinishedTxData) => {
+                    const txData = data.stacksTransaction.serialize()
+                    const txId = await alex.broadcastSponsoredTx(txData);
+                    alert(txId);
+                  }
+                });
+              } else {
+                const tx = await alex.runSwap(
                 stxAddress,
                 from!,
                 to!,
@@ -164,7 +200,11 @@ function App() {
               await openContractCall({
                 ...tx,
                 network: STACKS_MAINNET,
+                onFinish: async (data: FinishedTxData) => {
+                  alert(data.txId);
+                },
               });
+              }
             }}
           >
             Swap
