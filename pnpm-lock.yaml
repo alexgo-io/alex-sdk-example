@@ -24,8 +24,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       alex-sdk:
-        specifier: 3.0.0-beta.4
-        version: 3.0.0-beta.4(@stacks/common@7.0.2)(@stacks/network@7.0.2)(@stacks/transactions@7.0.2)
+        specifier: 3.0.0
+        version: 3.0.0(@stacks/common@7.0.2)(@stacks/network@7.0.2)(@stacks/transactions@7.0.2)
       c32check:
         specifier: ^2.0.0
         version: 2.0.0
@@ -674,8 +674,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
 
-  alex-sdk@3.0.0-beta.4:
-    resolution: {integrity: sha512-v3iChNvpQ6+Gf6VLNmgSKrVZS2HKKGE4OsxV7DvEMW+EZOihmLQ5yWrX5ft3RhO7fw1PNHDkX2Xz1saB8TQxvQ==}
+  alex-sdk@3.0.0:
+    resolution: {integrity: sha512-wEJA4fUNNBg2x+rd6VXUZklxV1RYSJrN0PavF+Vh3Cmi3jC+kweZtPzVbkBrZi4021x5/+tZcXtHZMUlLN3hqw==}
     engines: {node: '>=10'}
     peerDependencies:
       '@stacks/network': ^7.0.2
@@ -1630,7 +1630,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  alex-sdk@3.0.0-beta.4(@stacks/common@7.0.2)(@stacks/network@7.0.2)(@stacks/transactions@7.0.2):
+  alex-sdk@3.0.0(@stacks/common@7.0.2)(@stacks/network@7.0.2)(@stacks/transactions@7.0.2):
     dependencies:
       '@stacks/network': 7.0.2
       '@stacks/transactions': 7.0.2

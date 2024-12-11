@@ -173,7 +173,7 @@ function App() {
               try {
                 const stxAddress = userData!.profile.stxAddress.mainnet;
                 if (useSponsorTx) {
-                  const tx = await alex.runSwapForSponsorTx(
+                  const tx = await alex.runSwapForSponsoredTx(
                     stxAddress,
                     from!,
                     to!,
