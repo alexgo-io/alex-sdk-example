@@ -170,40 +170,48 @@ function App() {
           <button
             disabled={!valid}
             onClick={async () => {
-              const stxAddress = userData!.profile.stxAddress.mainnet;
-              if (useSponsorTx) {
-                const tx = await alex.runSwapForSponsorTx(
-                  stxAddress,
-                  from!,
-                  to!,
-                  BigInt(Number(amount) * 1e8),
-                  BigInt(0),
-                );
-                await openContractCall({
-                  ...tx,
-                  network: STACKS_MAINNET,
-                  sponsored: true,
-                  onFinish: async (data: SponsoredFinishedTxData) => {
-                    const txData = data.stacksTransaction.serialize()
-                    const txId = await alex.broadcastSponsoredTx(txData);
-                    alert(txId);
-                  }
-                });
-              } else {
-                const tx = await alex.runSwap(
-                stxAddress,
-                from!,
-                to!,
-                BigInt(Number(amount) * 1e8),
-                BigInt(0),
-              );
-              await openContractCall({
-                ...tx,
-                network: STACKS_MAINNET,
-                onFinish: async (data: FinishedTxData) => {
-                  alert(data.txId);
-                },
-              });
+              try {
+                const stxAddress = userData!.profile.stxAddress.mainnet;
+                if (useSponsorTx) {
+                  const tx = await alex.runSwapForSponsorTx(
+                    stxAddress,
+                    from!,
+                    to!,
+                    BigInt(Number(amount) * 1e8),
+                    BigInt(0),
+                  );
+                  await openContractCall({
+                    ...tx,
+                    network: STACKS_MAINNET,
+                    sponsored: true,
+                    onFinish: async (data: SponsoredFinishedTxData) => {
+                      try {
+                        const txData = data.stacksTransaction.serialize()
+                        const txId = await alex.broadcastSponsoredTx(txData);
+                        alert(txId);
+                      } catch (error) {
+                        alert(`Error broadcasting sponsored transaction: ${error}`);
+                      }
+                    }
+                  });
+                } else {
+                  const tx = await alex.runSwap(
+                    stxAddress,
+                    from!,
+                    to!,
+                    BigInt(Number(amount) * 1e8),
+                    BigInt(0),
+                  );
+                  await openContractCall({
+                    ...tx,
+                    network: STACKS_MAINNET,
+                    onFinish: async (data: FinishedTxData) => {
+                      alert(data.txId);
+                    },
+                  });
+                }
+              } catch (error) {
+                alert(`Error executing swap: ${error}`);
               }
             }}
           >
