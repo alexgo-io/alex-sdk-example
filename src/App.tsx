@@ -11,6 +11,7 @@ import { STACKS_MAINNET } from "@stacks/network";
 import { AlexSDK, Currency } from "alex-sdk";
 import { useCallback, useEffect, useState } from "react";
 import "./App.css";
+import SwapIframe from "./components/SwapIframe";
 
 const appConfig = new AppConfig([]);
 const userSession = new UserSession({ appConfig });
@@ -232,6 +233,7 @@ function App() {
           </button>
         </div>
       )}
+      <SwapIframe />
     </div>
   );
 }
