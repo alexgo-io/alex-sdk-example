@@ -44,7 +44,7 @@ class SwapIframe {
     this.container.style.bottom = '60px';
     this.container.style.right = '20px';
     this.container.style.zIndex = '1000';
-    this.container.style.borderRadius = '8px';
+    this.container.style.borderRadius = '12px';
     this.container.style.overflow = 'hidden';
     this.container.style.height = '0px'; // Start with 0 height
     this.container.style.maxHeight = 'calc(100vh - 40px)';
