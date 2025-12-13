@@ -6,8 +6,8 @@ Welcome to the `alex-sdk-example` repository! This example project demonstrates 
 
 Before you begin, make sure you have the following installed on your system:
 
-- Node.js
-- Yarn
+- Node.js (v16 or higher)
+- Yarn (v1.22 or higher)
 - Git
 
 ## Getting Started
@@ -23,13 +23,13 @@ cd alex-sdk-example
 ```
 2. **Install dependencies**
    Install the required dependencies using Yarn:
-```
+```bash
 yarn install
 ```
 This will install all the necessary packages and set up the project.
 3. **Run the demo locally**
    Start the development server with the following command:
-```
+```bash
 yarn dev
 ```
 The demo will now be accessible at [http://localhost:5173](http://localhost:5173) in your web browser.
