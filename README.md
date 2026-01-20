@@ -6,33 +6,45 @@ Welcome to the `alex-sdk-example` repository! This example project demonstrates 
 
 Before you begin, make sure you have the following installed on your system:
 
-- Node.js (v16 or higher)
-- Yarn (v1.22 or higher)
-- Git
+- [Node.js](https://nodejs.org/) (v18.x or higher)
+- [pnpm](https://pnpm.io/) (package manager)
+- [Git](https://git-scm.com/)
 
 ## Getting Started
 
 1. **Clone the repository**
+
    Clone the `alex-sdk-example` repository using the following command:
-```bash
-git clone https://github.com/alexgo-io/alex-sdk-example.git
-```
-Then, navigate to the project folder:
-```bash
-cd alex-sdk-example
-```
+
+   ```bash
+   git clone https://github.com/alexgo-io/alex-sdk-example.git
+   ```
+
+   Then, navigate to the project folder:
+
+   ```bash
+   cd alex-sdk-example
+   ```
+
 2. **Install dependencies**
-   Install the required dependencies using Yarn:
-```bash
-yarn install
-```
-This will install all the necessary packages and set up the project.
+
+   Install the required dependencies using pnpm:
+
+   ```bash
+   pnpm install
+   ```
+
+   This will install all the necessary packages and set up the project.
+
 3. **Run the demo locally**
+
    Start the development server with the following command:
-```bash
-yarn dev
-```
-The demo will now be accessible at [http://localhost:5173](http://localhost:5173) in your web browser.
+
+   ```bash
+   pnpm dev
+   ```
+
+   The demo will now be accessible at [http://localhost:5173](http://localhost:5173) in your web browser.
 
 ## Features
 
@@ -43,13 +55,22 @@ The `alex-sdk-example` showcases the following features of the Alex SDK:
 - Swap Rate
 - And perform actual swap
 
+## Tech Stack
+
+- [React](https://react.dev/) - UI framework
+- [Vite](https://vitejs.dev/) - Build tool and dev server
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Alex SDK](https://github.com/alexgo-io/alex-sdk) - ALEX DeFi SDK
+
 ## Documentation
 
 For more information about the Alex SDK, including detailed documentation, API references, and usage examples, please visit the official [Alex SDK documentation](https://github.com/alexgo-io/alex-sdk).
 
 ## Support and Contributions
 
-If you encounter any issues or have questions, feel free to open an issue in the [Issues](https://github.com/alexgo-io/alex-sdk-example/issues) section of this repository. Contributions and improvements are always welcome. If you would like to contribute, please fork the repository and submit a pull request.
+If you encounter any issues or have questions, feel free to open an issue in the [Issues](https://github.com/alexgo-io/alex-sdk-example/issues) section of this repository.
+
+Contributions and improvements are always welcome. If you would like to contribute, please see our [Contributing Guidelines](CONTRIBUTING.md), fork the repository, and submit a pull request.
 
 ## License
 
